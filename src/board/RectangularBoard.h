@@ -24,6 +24,8 @@ public:
 
     void setMap(const std::vector<std::vector<int>> &map);
 
+    void set(int x, int y, int v);
+
     void print();
 };
 

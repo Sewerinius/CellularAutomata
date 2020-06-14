@@ -15,3 +15,15 @@ void Connection::sendBoard(const std::vector<std::vector<int> >& board) {
     int res = sendCommand(SET_BOARD, data);
     assert(res == 0);
 }
+
+void Connection::getInputs(std::vector<std::vector<int> > &inputs) {
+    std::vector<uint8_t> data;
+    receiveCommand(GET_INPUTS, data, 8);
+    for (int i = 0; i < 8; i++) {
+        uint8_t row = data[i];
+        for (int j = 7; j >= 0; j--) {
+            inputs[i][j] = row & 1u;
+            row >>= 1u;
+        }
+    }
+}

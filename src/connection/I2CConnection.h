@@ -17,6 +17,9 @@ public:
     I2CConnection(int i2CFd, unsigned long address);
 
     int sendCommand(Command command, std::vector<uint8_t> data) override;
+
+    int
+    receiveCommand(Command command, std::vector<uint8_t> &dataBuffer, std::vector<uint8_t>::size_type count) override;
 };
 
 

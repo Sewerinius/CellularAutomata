@@ -10,13 +10,13 @@
 RectangularBoard::RectangularBoard(unsigned int width, unsigned int height)
         : width(width), height(height),
           map(8 * height, std::vector<int>(8 * width, 0)) {
-    for (auto & i : map) {
-        std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
-        std::discrete_distribution<int> distribution{1, 1};
-        for (int & j : i) {
-            j = distribution(generator);
-        }
-    }
+//    for (auto & i : map) {
+//        std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
+//        std::discrete_distribution<int> distribution{1, 1};
+//        for (int & j : i) {
+//            j = distribution(generator);
+//        }
+//    }
 
 //    map[3][4] = 1;
 //    map[4][4] = 1;
@@ -41,4 +41,8 @@ void RectangularBoard::print() {
         }
         std::cout << std::endl;
     }
+}
+
+void RectangularBoard::set(int x, int y, int v) {
+    map[y][x] = v;
 }

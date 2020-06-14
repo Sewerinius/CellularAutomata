@@ -22,6 +22,8 @@ public:
     void setConnection(int x, int y, std::unique_ptr<Connection> connection);
 
     void sendBoard(const RectangularBoard& board);
+
+    void handleInputs(RectangularBoard& board); //TODO: this is not a responsibility of this class
 };
 
 
