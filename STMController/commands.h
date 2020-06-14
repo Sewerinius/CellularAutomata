@@ -1,0 +1,14 @@
+//
+// Created by sewerin on 07.06.2020.
+//
+
+#ifndef CELLULARAUTOMATARPI_COMMANDS_H
+#define CELLULARAUTOMATARPI_COMMANDS_H
+
+enum Command {
+    NONE = 0,
+    SET_BOARD = 1,
+    GET_INPUTS
+};
+
+#endif //CELLULARAUTOMATARPI_COMMANDS_H
